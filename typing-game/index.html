@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TypeRush Arcade</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><h1>Type<span>Rush</span> Arcade</h1>
+  <div class="diff" role="group" aria-label="Difficulty">
+    <button data-d="easy">Easy</button><button data-d="medium" class="on">Medium</button><button data-d="hard">Hard</button>
+  </div>
+</header>
+
+<main id="home" class="screen">
+  <p class="lead">Pick a difficulty, then choose a game mode.</p>
+  <div class="cards">
+    <article class="card"><div class="ico">🫧</div><h2>Bubbles</h2>
+      <p>Letter bubbles float up. Press the matching key to pop them before they escape. Wrong key = penalty. Too many misses = game over.</p>
+      <p class="rules" id="rulesB"></p>
+      <button class="btn" id="startB">Start Bubbles</button></article>
+    <article class="card"><div class="ico">🧲</div><h2>KeyMagnet</h2>
+      <p>A target key lights up on the keyboard panel. Hit it as fast and accurately as you can until the clock runs out.</p>
+      <label class="sel">Key set
+        <select id="keyset"><option value="home">Home row (ASDFJKL)</option><option value="top">Top row (QWERTYUIOP)</option><option value="bottom">Bottom row (ZXCVBNM)</option><option value="all">All letters</option></select></label>
+      <p class="rules" id="rulesM"></p>
+      <button class="btn" id="startM">Start KeyMagnet</button></article>
+  </div>
+</main>
+
+<section id="gameScreen" class="screen hidden">
+  <div class="bar">
+    <strong id="modeName"></strong>
+    <div class="ctrl"><button id="bStart">Start</button><button id="bRestart">Restart</button><button id="bReset">Reset</button><button id="bHome">Home</button></div>
+  </div>
+  <div id="hud" class="hud"></div>
+  <div id="arena" class="arena"></div>
+  <div id="kb" class="kb hidden"></div>
+  <div id="ready" class="overlay"><div class="box"><h2 id="readyT"></h2><p id="readyP"></p><button class="btn" id="readyGo">Start</button></div></div>
+  <div id="results" class="overlay hidden"><div class="box"><h2 id="resT"></h2><div id="resBody" class="stats"></div>
+    <div class="ctrl"><button class="btn" id="resAgain">Play Again</button><button id="resHome">Home</button></div></div></div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
